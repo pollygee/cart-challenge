@@ -34,7 +34,6 @@ class CartTest < MiniTest::Test
     cart.add_item(mortar)
     cart.add_item(pestle)
     cart.add_item(widget)
-
     assert_equal cart.cost_before_tax, 60
     assert_equal cart.cost_after_tax, 66
   end
@@ -42,7 +41,6 @@ class CartTest < MiniTest::Test
   def test_carts_know_their_tax_rates
     cart = Cart.new
     assert_equal cart.tax_rate, 10
-
     special_cart = Cart.new({tax_rate: 20})
     assert_equal special_cart.tax_rate, 20
   end
